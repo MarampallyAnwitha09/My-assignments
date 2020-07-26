@@ -1,0 +1,37 @@
+
+public class removing {
+
+	public String remove(String str) {
+		String res="";
+		if(str.charAt(0)=='A')
+		{
+			if(str.charAt(1)=='A')
+			{
+				//res=str.charAt(0);
+				for(int i=2;i<str.length();i++)
+					 res=res+str.charAt(i);
+			}
+			else
+			{
+			 for(int i=1;i<str.length();i++)
+			  res=res+str.charAt(i);
+			}
+		}
+		else
+		{
+			if(str.charAt(1)=='A')
+			{
+				res=""+str.charAt(0);
+				for(int i=2;i<str.length();i++)
+					 res=res+str.charAt(i);
+			}
+			else
+			{
+				res=str;
+			}
+				
+		}
+		return res;
+	}
+
+}

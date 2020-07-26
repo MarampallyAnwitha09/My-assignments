@@ -1,0 +1,46 @@
+import static org.junit.Assert.*;
+
+
+
+import org.junit.Before;
+import org.junit.Test;
+
+
+public class removeA {
+
+	/*TODO List for future
+	 * 1. 1st char is A: ABCD => BCD  ---success
+	 * 2. 1st and 2nd char are A: AABC => BC  ---success
+	 * 3. 2nd char is A: BACD => BCD  ---success
+	 * 4. no two char are A: BBAA => BBAA   ---success
+	 * 5.  1st and 2nd char are A and also present after 2 chars: AABAA => BAA
+	 */
+	removing r;
+	@Before
+	public void setUp()
+	{
+		r=new removing();
+	}
+	
+	@Test
+	public void test1Char() {
+		assertEquals("BCD",r.remove("ABCD"));
+	}
+	@Test
+	public void test12Char() {
+		assertEquals("BC",r.remove("AABC"));
+	}
+	@Test
+	public void test2Char() {
+		assertEquals("BCD",r.remove("BACD"));
+	}
+	@Test
+	public void testNoChar() {
+		assertEquals("BBAA",r.remove("BBAA"));
+	}
+	@Test
+	public void test12AndAfterChar() {
+		assertEquals("BBAA",r.remove("AABBAA"));
+	}
+
+}
